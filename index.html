@@ -16,14 +16,14 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#shop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Shirts</a></li>
-                            <li><a class="dropdown-item" href="#">Jeans</a></li>
-                            <li><a class="dropdown-item" href="#">Shoes</a></li>
-                            <li><a class="dropdown-item" href="#">Accessories</a></li>
+                            <li><a class="dropdown-item" href="#shop">Shirts</a></li>
+                            <li><a class="dropdown-item" href="#shop">Jeans</a></li>
+                            <li><a class="dropdown-item" href="#shop">Shoes</a></li>
+                            <li><a class="dropdown-item" href="#shop">Accessories</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -40,10 +40,14 @@
             </div>
         </div>
     </nav>
-    <!-- Header -->
-    <header class="bg-dark py-5">
+    <!-- Header with Video Banner -->
+    <header class="video-header">
+        <video autoplay muted loop playsinline class="video-background">
+            <source src="videos/banner-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
+            <div class="text-center text-white overlay-content">
                 <h1 class="display-4 fw-bolder">Men's Style Revolution</h1>
                 <p class="lead fw-normal text-white-50 mb-0">Elevate Your Wardrobe with Premium Men's Fashion</p>
                 <p class="text-white mt-3" id="current-time">Current Time: Loading...</p>
@@ -51,11 +55,11 @@
         </div>
     </header>
     <!-- Section -->
-    <section class="py-5">
+    <section class="py-5" id="home">
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5">
-                    <div class="card h-100">
+                    <div class="card h-100 product-card">
                         <img class="card-img-top" src="images/jacket.jpg" alt="Men's Jacket" loading="lazy">
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -64,12 +68,12 @@
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="cart.html">Add to Cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto add-to-cart" href="cart.html">Add to Cart</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="col mb-5">
-                    <div class="card h-100">
+                    <div class="card h-100 product-card">
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <img class="card-img-top" src="images/shirt.jpg" alt="Men's Shirt" loading="lazy">
                         <div class="card-body p-4">
@@ -80,12 +84,12 @@
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="cart.html">Add to Cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto add-to-cart" href="cart.html">Add to Cart</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="col mb-5">
-                    <div class="card h-100">
+                    <div class="card h-100 product-card">
                         <img class="card-img-top" src="images/jeans.jpg" alt="Men's Jeans" loading="lazy">
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -94,12 +98,12 @@
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="cart.html">Add to Cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto add-to-cart" href="cart.html">Add to Cart</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="col mb-5">
-                    <div class="card h-100">
+                    <div class="card h-100 product-card">
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                         <img class="card-img-top" src="images/shoes.jpg" alt="Men's Shoes" loading="lazy">
                         <div class="card-body p-4">
@@ -110,7 +114,7 @@
                             </div>
                         </div>
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="cart.html">Add to Cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto add-to-cart" href="cart.html">Add to Cart</a></div>
                         </div>
                     </div>
                 </div>
@@ -141,6 +145,17 @@
         }
         updateTime(); // Cập nhật ngay lập tức
         setInterval(updateTime, 1000); // Cập nhật mỗi giây
+
+        // Fade-in animation for product cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200); // Delay each card by 200ms
+            });
+        });
     </script>
     <script src="js/scripts.js"></script>
 </body>
