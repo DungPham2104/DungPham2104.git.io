@@ -42,10 +42,15 @@
     </nav>
     <!-- Header with Video Banner -->
     <header class="video-header">
-        <video autoplay muted loop playsinline class="video-background">
+        <video class="video-background" id="banner-video">
             <source src="videos/banner-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            <source src="videos/banner-video.webm" type="video/webm">
+            <img src="images/jacket.jpg" alt="Fallback Banner" class="fallback-image">
         </video>
+        <div class="video-controls d-none">
+            <button class="btn btn-play btn-outline-light" id="play-btn"><i class="bi-play-fill"></i></button>
+            <button class="btn btn-pause btn-outline-light d-none" id="pause-btn"><i class="bi-pause-fill"></i></button>
+        </div>
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white overlay-content">
                 <h1 class="display-4 fw-bolder">Men's Style Revolution</h1>
@@ -155,6 +160,46 @@
                     card.style.transform = 'translateY(0)';
                 }, index * 200); // Delay each card by 200ms
             });
+
+            // Xử lý video banner
+            const video = document.getElementById('banner-video');
+            const fallbackImage = document.querySelector('.fallback-image');
+            const playBtn = document.getElementById('play-btn');
+            const pauseBtn = document.getElementById('pause-btn');
+            const controls = document.querySelector('.video-controls');
+
+            if (video) {
+                video.addEventListener('loadeddata', () => {
+                    video.style.display = 'block';
+                    if (fallbackImage) fallbackImage.style.display = 'none';
+                    controls.classList.remove('d-none');
+                });
+                video.addEventListener('error', () => {
+                    console.log('Video load error, showing fallback image');
+                    if (fallbackImage) fallbackImage.style.display = 'block';
+                    controls.classList.add('d-none');
+                });
+
+                // Kiểm tra autoplay
+                video.play().catch(error => {
+                    console.log('Autoplay blocked:', error);
+                    if (fallbackImage) fallbackImage.style.display = 'block';
+                    controls.classList.remove('d-none');
+                });
+
+                // Điều khiển video
+                playBtn.addEventListener('click', () => {
+                    video.play();
+                    playBtn.classList.add('d-none');
+                    pauseBtn.classList.remove('d-none');
+                    if (fallbackImage) fallbackImage.style.display = 'none';
+                });
+                pauseBtn.addEventListener('click', () => {
+                    video.pause();
+                    pauseBtn.classList.add('d-none');
+                    playBtn.classList.remove('d-none');
+                });
+            }
         });
     </script>
     <script src="js/scripts.js"></script>
